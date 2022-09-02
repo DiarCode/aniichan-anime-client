@@ -1,16 +1,12 @@
 import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import React, { PropsWithChildren, PropsWithRef } from "react";
+import React from "react";
 import HomeBannerImage from "../../assets/homeBanner.png";
 
-interface HomeBannerProps {
-  className: string;
-}
-
-const HomeBanner = ({ className }: HomeBannerProps) => {
+const HomeBanner = () => {
   return (
-    <div className={className}>
+    <div className="my-5 sm:my-7">
       <Link href="/search">
         <Image
           src={HomeBannerImage}

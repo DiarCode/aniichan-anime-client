@@ -17,7 +17,7 @@ const RecomendationsListGeneric = ({
   isError,
 }: RecomendationsListGenericProps) => {
   return (
-    <div>
+    <div className="my-2 sm:my-7">
       <h2 className="font-medium text-lg text-[#1F355E] ml-2 mb-2">
         {title} {"->"}
       </h2>

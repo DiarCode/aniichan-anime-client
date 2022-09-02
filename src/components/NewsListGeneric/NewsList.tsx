@@ -19,8 +19,8 @@ const NewsList = ({ data, isLoading, isError }: NewsListProps) => {
     );
   }
 
-  const renderedList = data?.map(item => (
-    <NewsListExcerpt data={item} key={item.mal_id} />
+  const renderedList = data?.map((item, index) => (
+    <NewsListExcerpt data={item} key={index} />
   ));
 
   return (
