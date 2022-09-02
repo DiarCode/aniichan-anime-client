@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { IAnime } from "../../types/anime";
 
 interface RecomendationsListExcerptProps {
   data: IAnime;

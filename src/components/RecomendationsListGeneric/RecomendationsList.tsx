@@ -1,4 +1,5 @@
 import React from "react";
+import { IAnime } from "../../types/anime";
 import RecomendationsExcerptSkeleton from "../Skeletons/RecomendationsExcerptSkeleton";
 import RecomendationsListExcerpt from "./RecomendationsListExcerpt";
 
@@ -22,7 +23,7 @@ const RecomendationsList = ({
     );
   }
 
-  const renderedList = data?.map((item) => (
+  const renderedList = data?.map(item => (
     <RecomendationsListExcerpt data={item} key={item.mal_id} />
   ));
 

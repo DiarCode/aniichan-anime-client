@@ -1,5 +1,7 @@
+import { IAnime } from "../types/anime";
+
 export const entity: IAnime = {
-  mal_id: 1,
+  mal_id: 5114,
   url: "https://myanimelist.net/…l_Alchemist__Brotherhood",
   images: {
     jpg: {
