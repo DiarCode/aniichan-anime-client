@@ -11,7 +11,7 @@ const NewsListExcerpt = ({ data }: NewsListExcerptProps) => {
   const daysDifference = getDaysDifference(data.date);
 
   return (
-    <div className="w-[240px] sm:w-[354px] pl-2 cursor-pointer">
+    <div className="w-[240px] sm:w-[354px] pl-2 pt-2 cursor-pointer">
       <Link href={data.url}>
         <div className="w-[240px] sm:w-[354px]">
           <div className="mb-3 h-[183px] sm:h-[240px]">
