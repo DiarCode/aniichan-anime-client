@@ -38,7 +38,17 @@ const animeEntity: IAnime = {
   ],
 };
 
-export const animeEntityArr = [animeEntity];
+export const animeEntityArr = [
+  animeEntity,
+  animeEntity,
+  animeEntity,
+  animeEntity,
+  animeEntity,
+  animeEntity,
+  animeEntity,
+  animeEntity,
+  animeEntity,
+];
 
 //News
 const newsEntity: INews = {

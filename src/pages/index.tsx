@@ -3,6 +3,7 @@ import EpisodesListGeneric from "../components/EpisodesListGeneric/EpisodesListG
 import Navbar from "../components/Navbar/Navbar";
 import NewsListGeneric from "../components/NewsListGeneric/NewsListGeneric";
 import RecomendationsListGeneric from "../components/RecomendationsListGeneric/RecomendationsListGeneric";
+import AppLayout from "../components/UI/AppLayout";
 import HomeBanner from "../components/UI/HomeBanner";
 import {
   animeEntityArr,
@@ -12,8 +13,7 @@ import {
 
 const Home: NextPage = () => {
   return (
-    <div className="container px-3 sm:px-0 w-full h-screen bg-white mx-auto mb-5">
-      <Navbar />
+    <AppLayout title="Home">
       <HomeBanner />
 
       <main>
@@ -27,7 +27,7 @@ const Home: NextPage = () => {
           data={episodesEntityArr}
         />
       </main>
-    </div>
+    </AppLayout>
   );
 };
 

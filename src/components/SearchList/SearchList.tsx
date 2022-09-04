@@ -1,37 +1,30 @@
 import React from "react";
 import { IAnime } from "../../types/anime";
+import RecomendationsListExcerpt from "../RecomendationsListGeneric/RecomendationsListExcerpt";
 import RecomendationsExcerptSkeleton from "../Skeletons/RecomendationsExcerptSkeleton";
-import RecomendationsListExcerpt from "./RecomendationsListExcerpt";
 
-interface RecomendationsListProps {
-  data: IAnime[] | undefined;
+interface SearchListProps {
+  data?: IAnime[];
   isLoading?: boolean;
   isError?: boolean;
 }
 
-const RecomendationsList = ({
-  data,
-  isLoading,
-  isError,
-}: RecomendationsListProps) => {
+const SearchList = ({ data, isLoading, isError }: SearchListProps) => {
   if (isLoading || isError) {
     const skeleton = [...new Array(10)].map((_, index) => (
       <RecomendationsExcerptSkeleton key={index} />
     ));
-    return (
-      <div className="flex items-center gap-5 overflow-x-auto">{skeleton}</div>
-    );
+    return <div className="flex flex-wrap items-center gap-5">{skeleton}</div>;
   }
 
   const renderedList = data?.map((item, index) => (
     <RecomendationsListExcerpt data={item} key={index} />
   ));
-
   return (
-    <div className="flex items-center gap-5 overflow-x-auto">
+    <div className="flex flex-wrap justify-start items-center gap-5">
       {renderedList}
     </div>
   );
 };
 
-export default RecomendationsList;
+export default SearchList;
