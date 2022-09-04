@@ -116,3 +116,35 @@ export const episodesEntityArr = [
   episodeEntity,
   episodeEntity,
 ];
+
+//Forum
+const forumEntity1 = {
+  mal_id: 243721,
+  url: "https://myanimelist.net/forum/?topicid=243721",
+  title: "Fullmetal Alchemist: Brotherhood Episode 64 Discussion",
+  date: "2010-07-04T00:00:00+00:00",
+  author_username: "Ahenshihael",
+  author_url: "https://myanimelist.net/profile/Ahenshihael",
+  comments: 842,
+};
+
+const forumEntity2 = {
+  mal_id: 23,
+  url: "https://myanimelist.net/forum/?topicid=243721",
+  title: "Fullmetal Alchemist",
+  date: "2010-07-04T00:00:00+00:00",
+  author_username: "Am",
+  author_url: "https://myanimelist.net/profile/Ahenshihael",
+  comments: 12,
+};
+
+export const forumEntityArr = [
+  forumEntity1,
+  forumEntity2,
+  forumEntity1,
+  forumEntity2,
+  forumEntity2,
+  forumEntity2,
+  forumEntity1,
+  forumEntity2,
+];
