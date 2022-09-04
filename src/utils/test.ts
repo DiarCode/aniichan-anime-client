@@ -1,4 +1,5 @@
 import { IAnime } from "../types/anime";
+import { IEpisode } from "../types/episode";
 import { INews } from "../types/news";
 
 //Anime
@@ -66,4 +67,42 @@ export const newsEntityArr = [
   newsEntity,
   newsEntity,
   newsEntity,
+];
+
+//Episodes
+const episodeEntity: IEpisode = {
+  entry: {
+    mal_id: 40839,
+    url: "https://myanimelist.net/…0839/Kanojo_Okarishimasu",
+    images: {
+      jpg: {
+        image_url: "https://cdn.myanimelist.net/images/anime/1485/107693.jpg",
+      },
+    },
+    title: "Kanojo, Okarishimasu",
+  },
+  episodes: [
+    {
+      mal_id: 12,
+      url: "https://myanimelist.net/anime/40839/Kanojo_Okarishimasu/episode/12",
+      title: "Episode 12",
+    },
+    {
+      mal_id: 11,
+      url: "https://myanimelist.net/anime/40839/Kanojo_Okarishimasu/episode/11",
+      title: "Episode 11",
+    },
+  ],
+};
+
+export const episodesEntityArr = [
+  episodeEntity,
+  episodeEntity,
+  episodeEntity,
+  episodeEntity,
+  episodeEntity,
+  episodeEntity,
+  episodeEntity,
+  episodeEntity,
+  episodeEntity,
 ];

@@ -87,8 +87,8 @@ const RecomendationsListExcerpt = ({
 
   return (
     <div className="w-[120px] sm:w-[177px] pl-2 pt-2 flex">
-      <Link href={"/"}>
-        <div className="w-[120px] sm:w-[177px]">
+      <div className="w-[120px] sm:w-[177px]">
+        <Link href={"/"}>
           <div
             className="relative cursor-pointer h-[183px] sm:h-[240px] bg-black rounded-xl hover:scale-105 duration-200"
             onMouseOver={() => setIsHovered(true)}
@@ -103,16 +103,19 @@ const RecomendationsListExcerpt = ({
               />
             </picture>
           </div>
-          <div className="py-3 pl-2">
+        </Link>
+
+        <div className="py-3 pl-2">
+          <Link href={"/"}>
             <p className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-sm sm:text-base text-[#1F355E] font-medium">
               {data?.title}
             </p>
-            <p className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-xs sm:text-sm  text-[#6FBEDC]">
-              {data?.studios?.[0]?.name}
-            </p>
-          </div>
+          </Link>
+          <p className="truncate text-ellipsis overflow-x-hidden text-xs sm:text-sm  text-[#6FBEDC]">
+            {data?.studios?.[0]?.name}
+          </p>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };

@@ -11,10 +11,10 @@ const NewsListExcerpt = ({ data }: NewsListExcerptProps) => {
   const daysDifference = getDaysDifference(data.date);
 
   return (
-    <div className="w-[240px] sm:w-[354px] pl-2 pt-2 cursor-pointer">
-      <Link href={data.url}>
-        <div className="w-[240px] sm:w-[354px]">
-          <div className="mb-3 h-[183px] sm:h-[240px]">
+    <div className="w-[240px] sm:w-[354px] pl-2 pt-2">
+      <div className="w-[240px] sm:w-[354px]">
+        <Link href={data.url}>
+          <div className="h-[183px] sm:h-[240px] cursor-pointer">
             <picture>
               <img
                 src={data.images.jpg?.image_url}
@@ -23,26 +23,29 @@ const NewsListExcerpt = ({ data }: NewsListExcerptProps) => {
               />
             </picture>
           </div>
+        </Link>
 
-          <div className="pl-2">
+        <div className="py-3 pl-2">
+          <Link href={data.url}>
             <p className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-sm sm:text-base text-[#1F355E] font-medium">
               {data.title}
             </p>
-            <div className="flex jus space-x-4 items-center">
-              <p className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-xs sm:text-sm text-[#6FBEDC] font-medium">
-                {data.author_username}
-              </p>
-              <span className="text-[#e1e7f4]">|</span>
-              <p className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-xs text-[#adc2d4] font-mormal">
-                {data.comments} comments
-              </p>
-              <p className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-xs text-[#adc2d4] font-mormal">
-                {daysDifference}
-              </p>
-            </div>
+          </Link>
+
+          <div className="flex jus space-x-4 items-center ">
+            <p className="truncate text-ellipsis overflow-x-hidden text-xs sm:text-sm text-[#6FBEDC] font-medium">
+              {data.author_username}
+            </p>
+            <span className="text-[#e1e7f4]">|</span>
+            <p className="truncate text-ellipsis overflow-x-hidden text-xs text-[#adc2d4] font-mormal">
+              {data.comments} comments
+            </p>
+            <p className="truncate text-ellipsis overflow-x-hidden text-xs text-[#adc2d4] font-mormal">
+              {daysDifference}
+            </p>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };

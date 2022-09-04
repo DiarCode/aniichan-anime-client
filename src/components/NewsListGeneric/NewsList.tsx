@@ -15,7 +15,7 @@ const NewsList = ({ data, isLoading, isError }: NewsListProps) => {
       <NewsExcerptSkeleton key={index} />
     ));
     return (
-      <div className="flex items-center gap-4 overflow-x-auto">{skeleton}</div>
+      <div className="flex items-center gap-5 overflow-x-auto">{skeleton}</div>
     );
   }
 
