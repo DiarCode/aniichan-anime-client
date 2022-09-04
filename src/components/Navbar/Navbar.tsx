@@ -6,14 +6,18 @@ const Navbar = () => {
   const { pathname } = useRouter();
 
   const renderedPageLinks = NAVBAR_PAGES_LINKS.map(page => {
-    const currentPageColor =
-      pathname !== null && pathname === page.path
-        ? "text-[#6FBEDC]"
-        : "text-[#1F355E]";
+    const isPageSelected = pathname !== null && pathname === page.path;
+    const currentPageStyle = isPageSelected
+      ? "text-[#6FBEDC]"
+      : "text-[#1F355E]";
 
     return (
       <Link href={page.path} key={page.name}>
-        <p className={`font-medium text-lg cursor-pointer ${currentPageColor}`}>
+        <p
+          className={`font-medium text-lg cursor-pointer ${currentPageStyle} ${
+            !isPageSelected && "hover:text-[#7a99a7]"
+          } duration-200 transition-all`}
+        >
           {page.name}
         </p>
       </Link>
@@ -35,12 +39,12 @@ const Navbar = () => {
 
         <div className="flex space-x-6 items-center">
           <Link href="/login">
-            <p className="font-medium text-lg text-[#1F355E] cursor-pointer">
+            <p className="font-medium text-lg text-[#1F355E] cursor-pointer hover:text-[#7a99a7] duration-200 transition-all">
               Sign in
             </p>
           </Link>
           <Link href="/registration">
-            <div className="py-1 px-4 bg-[#BFE4F6] rounded-xl">
+            <div className="py-1 px-4 bg-[#BFE4F6] rounded-xl hover:text-[#7a99a7] duration-200 transition-all">
               <p className="font-medium text-lg text-[#1F355E] cursor-pointer">
                 Sign up
               </p>
