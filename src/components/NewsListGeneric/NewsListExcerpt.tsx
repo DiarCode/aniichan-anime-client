@@ -28,15 +28,15 @@ const NewsListExcerpt = ({ data }: NewsListExcerptProps) => {
             <p className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-sm sm:text-base text-[#1F355E] font-medium">
               {data.title}
             </p>
-            <div className="flex jus space-x-3 items-center">
-              <p className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-xs sm:text-sm text-[#7aacde] font-medium">
+            <div className="flex jus space-x-4 items-center">
+              <p className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-xs sm:text-sm text-[#6FBEDC] font-medium">
                 {data.author_username}
               </p>
               <span className="text-[#e1e7f4]">|</span>
-              <p className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-xs text-[#6FBEDC] font-mormal">
+              <p className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-xs text-[#adc2d4] font-mormal">
                 {data.comments} comments
               </p>
-              <p className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-xs text-[#6FBEDC] font-mormal">
+              <p className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-xs text-[#adc2d4] font-mormal">
                 {daysDifference}
               </p>
             </div>
