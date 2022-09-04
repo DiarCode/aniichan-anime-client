@@ -12,7 +12,7 @@ import {
 
 const Home: NextPage = () => {
   return (
-    <div className="container w-full h-screen bg-white mx-auto mb-5">
+    <div className="container px-3 sm:px-0 w-full h-screen bg-white mx-auto mb-5">
       <Navbar />
       <HomeBanner />
 
