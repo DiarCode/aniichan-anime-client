@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
+import { AUTHORIZATION_PAGES_LINKS } from "../utils/pages";
 
 const Registration = () => {
   return (
@@ -45,7 +46,7 @@ const Registration = () => {
             <p className="font-normal text-sm text-[#95abd4] text-center">
               Have an account?
             </p>
-            <Link href="/login">
+            <Link href={AUTHORIZATION_PAGES_LINKS.LOGIN.path}>
               <p className="cursor-pointer font-medium text-sm text-[#85cbe7] text-center">
                 Sign in
               </p>

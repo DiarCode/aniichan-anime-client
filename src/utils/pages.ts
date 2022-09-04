@@ -1,14 +1,12 @@
-export const NAVBAR_PAGES_LINKS = [
-  { name: "Home", element: "element", path: "/" },
-  { name: "Search", element: "element", path: "/search" },
-  { name: "Forum", element: "element", path: "/forum" },
-  { name: "Reviews", element: "element", path: "/reviews" },
-  { name: "News", element: "element", path: "/news" },
-];
+export const NAVBAR_PAGES_LINKS = {
+  HOME: { name: "Home", element: "element", path: "/" },
+  SEARCH: { name: "Search", element: "element", path: "/search" },
+  FORUM: { name: "Forum", element: "element", path: "/forum" },
+  REVIEWS: { name: "Reviews", element: "element", path: "/reviews" },
+  NEWS: { name: "News", element: "element", path: "/news" },
+};
 
-export const AUTHORIZATION_PAGES_LINKS = [
-  { name: "Sign in", element: "element", path: "/login" },
-  { name: "Sign up", element: "element", path: "/registration" },
-];
-
-export const ALL_PAGES = [...AUTHORIZATION_PAGES_LINKS, ...NAVBAR_PAGES_LINKS];
+export const AUTHORIZATION_PAGES_LINKS = {
+  LOGIN: { name: "Sign in", element: "element", path: "/login" },
+  REGISTRATION: { name: "Sign up", element: "element", path: "/registration" },
+};

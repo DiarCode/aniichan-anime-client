@@ -1,33 +1,38 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { NAVBAR_PAGES_LINKS } from "../../utils/pages";
+import {
+  AUTHORIZATION_PAGES_LINKS,
+  NAVBAR_PAGES_LINKS,
+} from "../../utils/pages";
 import BurgerButton from "../UI/BurgerButton";
 import ProfileIcon from "../UI/ProfileIcon";
 
 const Navbar = () => {
-  const isAuth = true;
+  const isAuth = false;
   const { pathname } = useRouter();
   const [isBurgerActive, setBurgerActive] = useState(false);
 
-  const renderedPageLinks = NAVBAR_PAGES_LINKS.map(page => {
-    const isPageSelected = pathname !== null && pathname === page.path;
-    const currentPageStyle = isPageSelected
-      ? "text-[#6FBEDC]"
-      : "text-[#1F355E]";
+  const renderedPageLinks = Object.entries(NAVBAR_PAGES_LINKS).map(
+    ([_, page]) => {
+      const isPageSelected = pathname !== null && pathname === page.path;
+      const currentPageStyle = isPageSelected
+        ? "text-[#6FBEDC]"
+        : "text-[#1F355E]";
 
-    return (
-      <Link href={page.path} key={page.name}>
-        <p
-          className={`font-medium text-lg cursor-pointer ${currentPageStyle} ${
-            !isPageSelected && "hover:text-[#7a99a7]"
-          } duration-200 transition-all`}
-        >
-          {page.name}
-        </p>
-      </Link>
-    );
-  });
+      return (
+        <Link href={page.path} key={page.name}>
+          <p
+            className={`font-medium text-lg cursor-pointer ${currentPageStyle} ${
+              !isPageSelected && "hover:text-[#7a99a7]"
+            } duration-200 transition-all`}
+          >
+            {page.name}
+          </p>
+        </Link>
+      );
+    }
+  );
 
   const handleBurgerBtn = () => {
     setBurgerActive(prev => !prev);
@@ -37,7 +42,7 @@ const Navbar = () => {
     <div className="sticky z-[100] py-6 border-b-[0.1px] sm:px-0 border-[#c8cdd4]">
       <div className="flex justify-between items-center space-x-1 font-inter">
         <div className="">
-          <Link href="/">
+          <Link href={NAVBAR_PAGES_LINKS.HOME.path}>
             <p className="font-normal font-jacques text-2xl text-[#1F355E] cursor-pointer">
               anii.chan
             </p>
@@ -65,12 +70,12 @@ const Navbar = () => {
             <ProfileIcon />
           ) : (
             <div className="flex space-x-5 items-center">
-              <Link href="/login">
+              <Link href={AUTHORIZATION_PAGES_LINKS.LOGIN.path}>
                 <p className="font-medium text-lg text-[#1F355E] cursor-pointer hover:text-[#7a99a7] duration-200 transition-all">
                   Sign in
                 </p>
               </Link>
-              <Link href="/registration">
+              <Link href={AUTHORIZATION_PAGES_LINKS.REGISTRATION.path}>
                 <div className="py-1 px-4 bg-[#BFE4F6] rounded-xl hover:text-[#7a99a7] duration-200 transition-all">
                   <p className="font-medium text-lg text-[#1F355E] cursor-pointer">
                     Sign up
