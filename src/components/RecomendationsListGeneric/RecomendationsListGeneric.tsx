@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import React from "react";
 import { IAnime } from "../../types/anime";
 import RecomendationsList from "./RecomendationsList";

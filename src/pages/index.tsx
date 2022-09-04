@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import EpisodesListGeneric from "../components/EpisodesListGeneric/EpisodesListGeneric";
-import Navbar from "../components/Navbar/Navbar";
 import NewsListGeneric from "../components/NewsListGeneric/NewsListGeneric";
 import RecomendationsListGeneric from "../components/RecomendationsListGeneric/RecomendationsListGeneric";
 import AppLayout from "../components/UI/AppLayout";

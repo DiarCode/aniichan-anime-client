@@ -1,5 +1,4 @@
 import Head from "next/head";
-import React, { PropsWithChildren } from "react";
 import Navbar from "../Navbar/Navbar";
 
 interface AppLayout {
