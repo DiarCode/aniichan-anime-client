@@ -37,7 +37,7 @@ const Login = () => {
 
           <div className="mb-14">
             <button className="cursor-pointer rounded-lg bg-[#9cd8f0] text-[#1F355E] px-8 py-2">
-              Sign In
+              {AUTHORIZATION_PAGES_LINKS.LOGIN.name}
             </button>
           </div>
 
@@ -47,7 +47,7 @@ const Login = () => {
             </p>
             <Link href={AUTHORIZATION_PAGES_LINKS.REGISTRATION.path}>
               <p className="cursor-pointer font-medium text-sm text-[#85cbe7] text-center">
-                Sign Up
+                {AUTHORIZATION_PAGES_LINKS.REGISTRATION.name}
               </p>
             </Link>
           </div>

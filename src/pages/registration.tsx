@@ -4,6 +4,8 @@ import React from "react";
 import { AUTHORIZATION_PAGES_LINKS } from "../utils/pages";
 
 const Registration = () => {
+  const title = "Get's started";
+
   return (
     <div className="w-full h-screen bg-gradient-to-r from-[#7cc3e6] to-[#abf6f6] flex justify-center items-center p-3">
       <Head>
@@ -15,7 +17,7 @@ const Registration = () => {
         <div className="flex flex-col items-center">
           <div className="mb-10">
             <h1 className="font-bold text-2xl text-[#1F355E] mb-2 text-center">
-              Get{"'"}s started
+              {title}
             </h1>
             <h3 className="font-normal text-base text-[#95abd4] text-center">
               Explore the entire world of <br /> anime and manga with{" "}
@@ -38,7 +40,7 @@ const Registration = () => {
 
           <div className="mb-14">
             <button className="cursor-pointer rounded-lg bg-[#9cd8f0] text-[#1F355E] px-8 py-2">
-              Sign Up
+              {AUTHORIZATION_PAGES_LINKS.REGISTRATION.name}
             </button>
           </div>
 
@@ -48,7 +50,7 @@ const Registration = () => {
             </p>
             <Link href={AUTHORIZATION_PAGES_LINKS.LOGIN.path}>
               <p className="cursor-pointer font-medium text-sm text-[#85cbe7] text-center">
-                Sign in
+                {AUTHORIZATION_PAGES_LINKS.LOGIN.name}
               </p>
             </Link>
           </div>

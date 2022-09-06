@@ -1,13 +1,13 @@
 import React, { MouseEventHandler } from "react";
 
 interface BurgerButtonProps {
-  handleBurgerBtn: MouseEventHandler;
+  handleBtn: MouseEventHandler;
   isActive: boolean;
 }
 
-const BurgerNavbar = ({ handleBurgerBtn, isActive }: BurgerButtonProps) => {
+const BurgerNavbar = ({ handleBtn, isActive }: BurgerButtonProps) => {
   return (
-    <div onClick={handleBurgerBtn} className="order-10 inline-block sm:hidden">
+    <div onClick={handleBtn} className="order-10 inline-block sm:hidden">
       {isActive ? (
         <svg
           className="w-7 h-7 cursor-pointer"

@@ -3,13 +3,14 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { NAVBAR_PAGES_LINKS } from "../../utils/pages";
 import AuthorizationNavbar from "./AuthorizationNavbar";
-import BurgerButton from "./BurgerNavbar";
+import BurgerButton from "./BurgerButtonNavbar";
 import ProfileNavbar from "./ProfileNavbar";
 
 const Navbar = () => {
-  const isAuth = true;
+  const isAuth = false;
   const { pathname } = useRouter();
-  const [isBurgerActive, setBurgerActive] = useState(false);
+  const [isBurgerModalActive, setBurgerModalActive] = useState(false);
+  const [isProfileModalActive, setIsProfileModalActive] = useState(false);
 
   const renderedPageLinks = Object.entries(NAVBAR_PAGES_LINKS).map(
     ([_, page]) => {
@@ -32,10 +33,19 @@ const Navbar = () => {
     }
   );
 
-  const renderedAccountOrAuth = isAuth ? <ProfileNavbar /> : <AuthorizationNavbar />;
+  const closeAllTabs = () => {
+    setBurgerModalActive(false);
+    setIsProfileModalActive(false);
+  };
 
   const handleBurgerBtn = () => {
-    setBurgerActive(prev => !prev);
+    closeAllTabs();
+    setBurgerModalActive(isBurgerModalActive ? false : true);
+  };
+
+  const handleProfileModal = () => {
+    closeAllTabs();
+    setIsProfileModalActive(isProfileModalActive ? false : true);
   };
 
   return (
@@ -57,7 +67,7 @@ const Navbar = () => {
         {/* Burger Navbar */}
         <div
           className={`${
-            isBurgerActive ? "block" : "hidden"
+            isBurgerModalActive ? "block" : "hidden"
           } absolute z-50 top-[90px] -left-1 -right-1  rounded-xl bg-[#d4eefa] shadow-2xl shadow-[#648e9e65]`}
         >
           <div className="flex flex-col items-center space-y-3 py-8">
@@ -66,11 +76,18 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-4">
-          {renderedAccountOrAuth}
+          {isAuth ? (
+            <ProfileNavbar
+              isActive={isProfileModalActive}
+              handleBtn={handleProfileModal}
+            />
+          ) : (
+            <AuthorizationNavbar />
+          )}
 
           <BurgerButton
-            isActive={isBurgerActive}
-            handleBurgerBtn={handleBurgerBtn}
+            isActive={isBurgerModalActive}
+            handleBtn={handleBurgerBtn}
           />
         </div>
       </div>
