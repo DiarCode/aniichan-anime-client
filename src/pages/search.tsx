@@ -1,6 +1,6 @@
 import React from "react";
 import SearchList from "../components/SearchList/SearchList";
-import AppLayout from "../components/UI/AppLayout";
+import AppLayout from "../components/AppLayouts/AppLayout";
 import { animeEntityArr } from "../utils/test";
 
 const search = () => {

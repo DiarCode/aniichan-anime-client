@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProfileIcon = () => {
+const ProfileNavbar = () => {
   return (
     <div className="flex items-center cursor-pointer">
       <svg
@@ -32,4 +32,4 @@ const ProfileIcon = () => {
   );
 };
 
-export default ProfileIcon;
+export default ProfileNavbar;

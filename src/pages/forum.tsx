@@ -1,6 +1,6 @@
 import React from "react";
 import ForumListGeneric from "../components/ForumListGeneric/ForumListGeneric";
-import AppLayout from "../components/UI/AppLayout";
+import AppLayout from "../components/AppLayouts/AppLayout";
 import { forumEntityArr } from "../utils/test";
 
 const Forum = () => {

@@ -1,15 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import {
-  AUTHORIZATION_PAGES_LINKS,
-  NAVBAR_PAGES_LINKS,
-} from "../../utils/pages";
-import BurgerButton from "../UI/BurgerButton";
-import ProfileIcon from "../UI/ProfileIcon";
+import { NAVBAR_PAGES_LINKS } from "../../utils/pages";
+import AuthorizationNavbar from "./AuthorizationNavbar";
+import BurgerButton from "./BurgerNavbar";
+import ProfileNavbar from "./ProfileNavbar";
 
 const Navbar = () => {
-  const isAuth = false;
+  const isAuth = true;
   const { pathname } = useRouter();
   const [isBurgerActive, setBurgerActive] = useState(false);
 
@@ -33,6 +31,8 @@ const Navbar = () => {
       );
     }
   );
+
+  const renderedAccountOrAuth = isAuth ? <ProfileNavbar /> : <AuthorizationNavbar />;
 
   const handleBurgerBtn = () => {
     setBurgerActive(prev => !prev);
@@ -66,24 +66,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-4">
-          {isAuth ? (
-            <ProfileIcon />
-          ) : (
-            <div className="flex space-x-5 items-center">
-              <Link href={AUTHORIZATION_PAGES_LINKS.LOGIN.path}>
-                <p className="font-medium text-lg text-[#1F355E] cursor-pointer hover:text-[#7a99a7] duration-200 transition-all">
-                  Sign in
-                </p>
-              </Link>
-              <Link href={AUTHORIZATION_PAGES_LINKS.REGISTRATION.path}>
-                <div className="py-1 px-4 bg-[#BFE4F6] rounded-xl hover:text-[#7a99a7] duration-200 transition-all">
-                  <p className="font-medium text-lg text-[#1F355E] cursor-pointer">
-                    Sign up
-                  </p>
-                </div>
-              </Link>
-            </div>
-          )}
+          {renderedAccountOrAuth}
 
           <BurgerButton
             isActive={isBurgerActive}

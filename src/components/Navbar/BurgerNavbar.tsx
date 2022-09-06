@@ -5,7 +5,7 @@ interface BurgerButtonProps {
   isActive: boolean;
 }
 
-const BurgerButton = ({ handleBurgerBtn, isActive }: BurgerButtonProps) => {
+const BurgerNavbar = ({ handleBurgerBtn, isActive }: BurgerButtonProps) => {
   return (
     <div onClick={handleBurgerBtn} className="order-10 inline-block sm:hidden">
       {isActive ? (
@@ -43,4 +43,4 @@ const BurgerButton = ({ handleBurgerBtn, isActive }: BurgerButtonProps) => {
   );
 };
 
-export default BurgerButton;
+export default BurgerNavbar;
