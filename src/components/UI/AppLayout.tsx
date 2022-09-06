@@ -9,7 +9,7 @@ interface AppLayout {
 
 const AppLayout = ({ children, title, includeNavbar = true }: AppLayout) => {
   return (
-    <div className="container px-3 sm:px-0 w-full h-screen bg-white mx-auto mb-5">
+    <div className="container px-3 sm:px-0 w-full h-screen bg-white mx-auto pb-10">
       <Head>
         <title>Anii.Chan | {title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

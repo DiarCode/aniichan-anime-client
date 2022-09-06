@@ -6,7 +6,7 @@ import { animeEntityArr } from "../utils/test";
 const search = () => {
   return (
     <AppLayout title="Search">
-      <div className="w-full h-36 sm:h-44 lg:h-56 bg-gradient-to-r from-[#BEE3F5] to-[#C0ECEB] rounded-xl my-6 mb-28 relative">
+      <div className="w-full h-36 sm:h-44 lg:h-56 bg-gradient-to-r from-[#BEE3F5] to-[#C0ECEB] rounded-xl my-6 mb-20 sm:mb-28 relative">
         <div className="h-full flex justify-center items-center px-3">
           <p className="font-bold text-lg sm:text-2xl lg:text-3xl text-[#3B588E] text-center -mt-4 sm:-mt-8 max-w-lg">
             Find any information on your favorite anime, manga, and more...
