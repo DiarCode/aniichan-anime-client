@@ -86,7 +86,7 @@ const RecomendationsListExcerpt = ({
   );
 
   return (
-    <div className="w-[120px] sm:w-[177px] pl-2 pt-2 flex">
+    <div className="w-[120px] sm:w-[177px] sm:pl-2 sm:pt-2 flex">
       <div className="w-[120px] sm:w-[177px]">
         <Link href={"/"}>
           <div

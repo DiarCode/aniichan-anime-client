@@ -9,7 +9,7 @@ interface EpisodesListExcerptProps {
 
 const EpisodesListExcerpt = ({ data, entry }: EpisodesListExcerptProps) => {
   return (
-    <div className="w-[120px] sm:w-[177px] pl-2 pt-2">
+    <div className="w-[120px] sm:w-[177px] sm:pl-2 sm:pt-2">
       <div className="w-[120px] sm:w-[177px]">
         <Link href={data.url}>
           <div className="h-[183px] sm:h-[240px] cursor-pointer">
