@@ -5,7 +5,7 @@ import { AUTHORIZATION_PAGES_LINKS } from "../utils/pages";
 
 const Login = () => {
   return (
-    <div className="w-full h-screen bg-gradient-to-r from-[#7cc3e6] to-[#abf6f6] flex justify-center items-center">
+    <div className="w-full h-screen bg-gradient-to-r from-[#7cc3e6] to-[#abf6f6] flex justify-center items-center p-3">
       <Head>
         <title>Anii.Chan | Sign In</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

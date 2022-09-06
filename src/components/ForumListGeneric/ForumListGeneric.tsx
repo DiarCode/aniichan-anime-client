@@ -17,7 +17,7 @@ const ForumListGeneric = ({
 }: ForumListGenericProps) => {
   return (
     <div className="my-4 sm:my-6">
-      <h2 className="font-medium text-lg text-[#1F355E] ml-2 mb-2">
+      <h2 className="font-medium text-lg text-[#1F355E] mb-2">
         {title} {"->"}
       </h2>
       <ForumList data={data} isLoading={isLoading} isError={isError} />

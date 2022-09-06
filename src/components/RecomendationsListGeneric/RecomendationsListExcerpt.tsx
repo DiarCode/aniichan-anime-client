@@ -18,7 +18,10 @@ const RecomendationsListExcerpt = ({
   const details = [data?.year, data?.type].join(", ");
 
   const hoveredDetailsContent = isHovered && (
-    <div className="rounded-xl absolute top-0 right-0 bottom-0 left-0 p-4 cursor-pointer bg-opacity-70 bg-black">
+    <div
+      className="hidden sm:block rounded-xl absolute top-0 right-0 bottom-0 left-0 p-4 cursor-pointer bg-opacity-70 bg-black "
+      onClick={e => e.preventDefault()}
+    >
       <div className="rounded-xl flex flex-col justify-between h-full">
         <div className="rounded-xl flex flex-col space-y-2 items-end h-full">
           <p
@@ -86,11 +89,11 @@ const RecomendationsListExcerpt = ({
   );
 
   return (
-    <div className="w-[120px] sm:w-[177px] sm:pl-2 sm:pt-2 flex">
+    <div className="w-[120px] sm:w-[177px] sm:pl-2 pt-2 flex">
       <div className="w-[120px] sm:w-[177px]">
-        <Link href={"/"}>
+        <Link href={"https://moodle.astanait.edu.kz"}>
           <div
-            className="relative cursor-pointer h-[183px] sm:h-[240px] bg-black rounded-xl hover:scale-105 duration-200"
+            className="relative cursor-pointer h-[183px] sm:h-[240px] bg-black rounded-xl sm:hover:scale-105 duration-200"
             onMouseOver={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
