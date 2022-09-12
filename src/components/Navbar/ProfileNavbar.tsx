@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React, { MouseEventHandler, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../store";
+import { selectUser, setAuth } from "../../store/slices/authSlice";
 import { PROFILE_PAGES_LINKS } from "../../utils/pages";
 
 interface ProfileNavbarProps {
@@ -8,6 +10,13 @@ interface ProfileNavbarProps {
 }
 
 const ProfileNavbar = ({ isActive, handleBtn }: ProfileNavbarProps) => {
+  const user = useAppSelector(selectUser);
+  const dispatch = useAppDispatch();
+
+  const handleLogout = () => {
+    dispatch(setAuth({ isAuth: false, user: null }));
+  };
+
   const renderedPageLinks = Object.entries(PROFILE_PAGES_LINKS).map(
     ([_, page]) => {
       return (
@@ -37,7 +46,7 @@ const ProfileNavbar = ({ isActive, handleBtn }: ProfileNavbarProps) => {
         </svg>
 
         <p className="font-medium text-base text-[#1F355E] cursor-pointer mr-1">
-          Alexandra
+          {user?.name}
         </p>
 
         <svg
@@ -61,14 +70,17 @@ const ProfileNavbar = ({ isActive, handleBtn }: ProfileNavbarProps) => {
         <div className="flex flex-col justify-center items-start w-full px-6 py-5">
           <div className="w-full">
             <h1 className="font-semibold truncate text-ellipsis overflow-x-hidden pb-2 border-b-[0.1px] border-[#8594b1] text-lg text-[#1F355E]">
-              Alexandra Petrovna
+              {user?.name}
             </h1>
           </div>
           <div className="flex flex-col justify-center items-start pt-2 space-y-2 mb-2">
             {renderedPageLinks}
           </div>
-          <div>
-            <button className="text-[#1F355E] text-base font-medium rounded-xl hover:text-[#7a99a7]">
+          <div className="w-full pt-2 border-t-[0.1px] border-[#8594b1]">
+            <button
+              onClick={handleLogout}
+              className="text-[#1F355E] text-base font-medium rounded-xl hover:text-[#7a99a7]"
+            >
               Logout
             </button>
           </div>

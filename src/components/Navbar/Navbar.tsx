@@ -1,13 +1,16 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { useAppSelector } from "../../store";
+import { selectIsAuth } from "../../store/slices/authSlice";
 import { NAVBAR_PAGES_LINKS } from "../../utils/pages";
 import AuthorizationNavbar from "./AuthorizationNavbar";
 import BurgerButton from "./BurgerButtonNavbar";
 import ProfileNavbar from "./ProfileNavbar";
 
 const Navbar = () => {
-  const isAuth = false;
+  const isAuth = useAppSelector(selectIsAuth);
+
   const { pathname } = useRouter();
   const [isBurgerModalActive, setBurgerModalActive] = useState(false);
   const [isProfileModalActive, setIsProfileModalActive] = useState(false);
