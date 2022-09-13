@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import EpisodesListGeneric from "../components/EpisodesListGeneric/EpisodesListGeneric";
 import NewsListGeneric from "../components/NewsListGeneric/NewsListGeneric";
-import RecomendationsListGeneric from "../components/RecomendationsListGeneric/RecomendationsListGeneric";
+import RecomendationsListGeneric from "../components/AnimeListGeneric/AnimeListGeneric";
 import AppLayout from "../components/AppLayouts/AppLayout";
 import HomeBanner from "../components/UI/HomeBanner";
 import {

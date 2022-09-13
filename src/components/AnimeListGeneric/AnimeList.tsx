@@ -1,22 +1,18 @@
 import React from "react";
 import { IAnime } from "../../types/anime";
-import RecomendationsExcerptSkeleton from "../Skeletons/RecomendationsExcerptSkeleton";
-import RecomendationsListExcerpt from "./RecomendationsListExcerpt";
+import AnimeExcerptSkeleton from "../Skeletons/RecomendationsExcerptSkeleton";
+import AnimeListExcerpt from "./AnimeListExcerpt";
 
-interface RecomendationsListProps {
+interface AnimeListProps {
   data: IAnime[] | undefined;
   isLoading?: boolean;
   isError?: boolean;
 }
 
-const RecomendationsList = ({
-  data,
-  isLoading,
-  isError,
-}: RecomendationsListProps) => {
+const AnimeList = ({ data, isLoading, isError }: AnimeListProps) => {
   if (isLoading || isError) {
     const skeleton = [...new Array(10)].map((_, index) => (
-      <RecomendationsExcerptSkeleton key={index} />
+      <AnimeExcerptSkeleton key={index} />
     ));
     return (
       <div className="flex items-center gap-5 overflow-x-auto">{skeleton}</div>
@@ -24,7 +20,7 @@ const RecomendationsList = ({
   }
 
   const renderedList = data?.map((item, index) => (
-    <RecomendationsListExcerpt data={item} key={index} />
+    <AnimeListExcerpt data={item} key={index} />
   ));
 
   return (
@@ -34,4 +30,4 @@ const RecomendationsList = ({
   );
 };
 
-export default RecomendationsList;
+export default AnimeList;

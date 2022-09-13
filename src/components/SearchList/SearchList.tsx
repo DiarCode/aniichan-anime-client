@@ -1,6 +1,6 @@
 import React from "react";
 import { IAnime } from "../../types/anime";
-import RecomendationsListExcerpt from "../RecomendationsListGeneric/RecomendationsListExcerpt";
+import RecomendationsListExcerpt from "../AnimeListGeneric/AnimeListExcerpt";
 import RecomendationsExcerptSkeleton from "../Skeletons/RecomendationsExcerptSkeleton";
 
 interface SearchListProps {

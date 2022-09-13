@@ -1,29 +1,29 @@
 import React from "react";
 import { IAnime } from "../../types/anime";
-import RecomendationsList from "./RecomendationsList";
+import AnimeList from "./AnimeList";
 
-interface RecomendationsListGenericProps {
+interface AnimeListGenericProps {
   title: string;
   data?: IAnime[] | undefined;
   isLoading?: boolean;
   isError?: boolean;
 }
 
-const RecomendationsListGeneric = ({
+const AnimeListGeneric = ({
   title,
   data,
   isLoading,
   isError,
-}: RecomendationsListGenericProps) => {
+}: AnimeListGenericProps) => {
   const titleWithArrowSign = `${title} ->`;
   return (
     <div className="my-4 sm:my-7">
       <h2 className="font-medium text-lg text-[#1F355E] sm:ml-2 mb-2">
         {titleWithArrowSign}
       </h2>
-      <RecomendationsList data={data} isLoading={isLoading} isError={isError} />
+      <AnimeList data={data} isLoading={isLoading} isError={isError} />
     </div>
   );
 };
 
-export default RecomendationsListGeneric;
+export default AnimeListGeneric;
