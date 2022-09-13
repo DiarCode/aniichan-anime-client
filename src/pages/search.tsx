@@ -3,7 +3,7 @@ import SearchList from "../components/SearchList/SearchList";
 import AppLayout from "../components/AppLayouts/AppLayout";
 import { animeEntityArr } from "../utils/test";
 
-const search = () => {
+const SearchPage = () => {
   return (
     <AppLayout title="Search">
       <div className="w-full h-36 sm:h-44 lg:h-56 bg-gradient-to-r from-[#BEE3F5] to-[#C0ECEB] rounded-xl my-6 mb-20 sm:mb-28 relative">
@@ -36,4 +36,4 @@ const search = () => {
   );
 };
 
-export default search;
+export default SearchPage;

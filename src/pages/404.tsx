@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { NAVBAR_PAGES_LINKS } from "../utils/pages";
 
-const PageNotFound = () => {
+const NotFoundPage = () => {
   return (
     <div className="w-full h-screen bg-gradient-to-r from-[#7cc3e6] to-[#abf6f6] flex flex-col justify-center items-center">
       <div className=" mb-12">

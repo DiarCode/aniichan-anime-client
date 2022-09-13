@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { AUTHORIZATION_PAGES_LINKS } from "../utils/pages";
 
-const Registration = () => {
+const RegistrationPage = () => {
   const title = "Get's started";
 
   return (
@@ -60,4 +60,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default RegistrationPage;

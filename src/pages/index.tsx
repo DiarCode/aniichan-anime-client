@@ -10,7 +10,7 @@ import {
   newsEntityArr,
 } from "../utils/test";
 
-const Home: NextPage = () => {
+const HomePage: NextPage = () => {
   return (
     <AppLayout title="Home">
       <HomeBanner />
@@ -30,4 +30,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default HomePage;

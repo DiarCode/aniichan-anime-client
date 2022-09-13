@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { AUTHORIZATION_PAGES_LINKS } from "../utils/pages";
 
-const Login = () => {
+const LoginPage = () => {
   return (
     <div className="w-full h-screen bg-gradient-to-r from-[#7cc3e6] to-[#abf6f6] flex justify-center items-center p-3">
       <Head>
@@ -57,4 +57,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;

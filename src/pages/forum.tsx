@@ -4,7 +4,7 @@ import AppLayout from "../components/AppLayouts/AppLayout";
 import { forumEntityArr } from "../utils/test";
 import { NAVBAR_PAGES_LINKS } from "../utils/pages";
 
-const Forum = () => {
+const ForumPage = () => {
   return (
     <AppLayout title="Forum">
       <div className="my-6 rounded-xl bg-gradient-to-r from-[#BEE3F5] to-[#C0ECEB] px-7 py-2 inline-block">
@@ -20,4 +20,4 @@ const Forum = () => {
   );
 };
 
-export default Forum;
+export default ForumPage;
