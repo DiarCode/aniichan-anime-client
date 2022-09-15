@@ -7,7 +7,7 @@ import { NAVBAR_PAGES_LINKS } from "../utils/pages";
 const SearchPage = () => {
   return (
     <AppLayout
-      title="Search"
+      title={NAVBAR_PAGES_LINKS.SEARCH.name}
       description={NAVBAR_PAGES_LINKS.SEARCH.description}
     >
       <div className="w-full h-36 sm:h-44 lg:h-56 bg-gradient-to-r from-[#BEE3F5] to-[#C0ECEB] rounded-xl my-6 mb-20 sm:mb-28 relative">

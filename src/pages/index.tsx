@@ -13,7 +13,7 @@ import { NAVBAR_PAGES_LINKS } from "../utils/pages";
 
 const HomePage: NextPage = () => {
   return (
-    <AppLayout title="Home" description={NAVBAR_PAGES_LINKS.HOME.description}>
+    <AppLayout title={NAVBAR_PAGES_LINKS.HOME.name} description={NAVBAR_PAGES_LINKS.HOME.description}>
       <HomeBanner />
 
       <main>

@@ -7,7 +7,10 @@ import { mangaEntityArr, newsEntityArr } from "../utils/test";
 
 const MangaPage = () => {
   return (
-    <AppLayout title="Home" description={NAVBAR_PAGES_LINKS.MANGA.description}>
+    <AppLayout
+      title={NAVBAR_PAGES_LINKS.MANGA.name}
+      description={NAVBAR_PAGES_LINKS.MANGA.description}
+    >
       <main>
         <MangaListGeneric title="Popular Now" data={mangaEntityArr} />
         <NewsListGeneric
