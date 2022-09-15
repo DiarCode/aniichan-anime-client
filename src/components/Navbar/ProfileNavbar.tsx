@@ -65,7 +65,7 @@ const ProfileNavbar = ({ isActive, handleBtn }: ProfileNavbarProps) => {
       <div
         className={`${
           isActive ? "block" : "hidden"
-        } absolute z-50 w-fit max-w-[220px] top-[90px] -right-1  rounded-xl bg-[#d4eefa] shadow-2xl shadow-[#648e9e65]`}
+        } absolute z-50 w-fit min-w-[140px] max-w-[220px] top-[90px] -right-1  rounded-xl bg-[#d4eefa] shadow-2xl shadow-[#648e9e65]`}
       >
         <div className="flex flex-col justify-center items-start w-full px-6 py-5">
           <div className="w-full">

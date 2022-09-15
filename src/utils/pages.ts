@@ -32,8 +32,8 @@ export const AUTHORIZATION_PAGES_LINKS = {
 };
 
 export const PROFILE_PAGES_LINKS = {
-  SETTINGS: { name: "Settings", element: "element", path: "/settings" },
   PROFILE: { name: "Profile", element: "element", path: "/profile" },
-  SAVED: { name: "Saved anime", element: "element", path: "/saved-anime" },
-  LIKED: { name: "Liked anime", element: "element", path: "/liked-anime" },
+  SAVED: { name: "Saved", element: "element", path: "/saved-anime" },
+  LIKED: { name: "Liked", element: "element", path: "/liked-anime" },
+  SETTINGS: { name: "Settings", element: "element", path: "/settings" },
 };
