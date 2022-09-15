@@ -9,10 +9,11 @@ import {
   episodesEntityArr,
   newsEntityArr,
 } from "../utils/test";
+import { NAVBAR_PAGES_LINKS } from "../utils/pages";
 
 const HomePage: NextPage = () => {
   return (
-    <AppLayout title="Home">
+    <AppLayout title="Home" description={NAVBAR_PAGES_LINKS.HOME.description}>
       <HomeBanner />
 
       <main>

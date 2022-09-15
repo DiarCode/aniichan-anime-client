@@ -1,9 +1,29 @@
 export const NAVBAR_PAGES_LINKS = {
-  HOME: { name: "Home", element: "element", path: "/" },
-  SEARCH: { name: "Search", element: "element", path: "/search" },
-  FORUM: { name: "Forum", element: "element", path: "/forum" },
-  REVIEWS: { name: "Manga", element: "element", path: "/manga" },
-  NEWS: { name: "News", element: "element", path: "/news" },
+  HOME: {
+    name: "Home",
+    description: "AniiChan - anime and manga encyclopedia",
+    path: "/",
+  },
+  SEARCH: {
+    name: "Search",
+    description: "AniiChan - Find your favourite anime and manga",
+    path: "/search",
+  },
+  FORUM: {
+    name: "Forum",
+    description: "AniiChan - discuss and explore anime and manga topics",
+    path: "/forum",
+  },
+  MANGA: {
+    name: "Manga",
+    description: "AniiChan - pupular manga, news and much more",
+    path: "/manga",
+  },
+  NEWS: {
+    name: "News",
+    description: "AniiChan - fresh news of the most popular anime and manga",
+    path: "/news",
+  },
 };
 
 export const AUTHORIZATION_PAGES_LINKS = {

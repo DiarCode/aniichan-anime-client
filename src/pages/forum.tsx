@@ -6,7 +6,7 @@ import { NAVBAR_PAGES_LINKS } from "../utils/pages";
 
 const ForumPage = () => {
   return (
-    <AppLayout title="Forum">
+    <AppLayout title="Forum" description={NAVBAR_PAGES_LINKS.FORUM.description}>
       <div className="my-6 rounded-xl bg-gradient-to-r from-[#BEE3F5] to-[#C0ECEB] px-7 py-2 inline-block">
         <p className="text-[#1F355E] font-bold text-xl">
           {NAVBAR_PAGES_LINKS.FORUM.name}

@@ -2,11 +2,12 @@ import React from "react";
 import AppLayout from "../components/AppLayouts/AppLayout";
 import MangaListGeneric from "../components/MangaListGeneric/MangaListGeneric";
 import NewsListGeneric from "../components/NewsListGeneric/NewsListGeneric";
+import { NAVBAR_PAGES_LINKS } from "../utils/pages";
 import { mangaEntityArr, newsEntityArr } from "../utils/test";
 
 const MangaPage = () => {
   return (
-    <AppLayout title="Home">
+    <AppLayout title="Home" description={NAVBAR_PAGES_LINKS.MANGA.description}>
       <main>
         <MangaListGeneric title="Popular Now" data={mangaEntityArr} />
         <NewsListGeneric
