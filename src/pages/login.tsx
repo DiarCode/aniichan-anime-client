@@ -30,7 +30,7 @@ const LoginPage = () => {
       includeNavbar={false}
       className="w-full"
     >
-      <div className="w-full h-screen bg-gradient-to-r from-[#7cc3e6] to-[#abf6f6] flex sm:justify-center sm:items-center px-3 py-5">
+      <div className="w-full h-screen bg-gradient-to-r from-[#7cc3e6] to-[#abf6f6] flex justify-center items-center px-3 py-5">
         <div className="w-[400px] bg-white rounded-xl p-8 h-fit">
           <div className="flex flex-col items-center">
             <div className="mb-10">
