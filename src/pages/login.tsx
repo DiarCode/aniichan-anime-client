@@ -1,18 +1,37 @@
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
+import React, { MutableRefObject, useRef, useState } from "react";
 import AppLayout from "../components/AppLayouts/AppLayout";
+import NotificationModal from "../components/NotificationModal/NotificationModal";
+import { NOTIFICATION_TYPES } from "../types/notificationTypes";
 import { AUTHORIZATION_PAGES_LINKS } from "../utils/pages";
 
 const LoginPage = () => {
+  const usernameRef = useRef() as MutableRefObject<HTMLInputElement>;
+  const passwordRef = useRef() as MutableRefObject<HTMLInputElement>;
+
+  const [showNotificationModal, setShowNotificationModal] = useState(false);
+
+  const handleLoginSubmit = () => {
+    const usernameValue = usernameRef.current.value || null;
+    const passwordValue = passwordRef.current.value || null;
+
+    const isFormInputValid = usernameValue !== null && passwordValue !== null;
+
+    if (!isFormInputValid) return setShowNotificationModal(true);
+
+    console.log("username: ", usernameValue);
+    console.log("password: ", passwordValue);
+  };
+
   return (
     <AppLayout
       title={AUTHORIZATION_PAGES_LINKS.LOGIN.name}
       includeNavbar={false}
       className="w-full"
     >
-      <div className="w-full h-screen bg-gradient-to-r from-[#7cc3e6] to-[#abf6f6] flex justify-center items-center p-3">
-        <div className="w-[400px] bg-white rounded-xl p-8">
+      <div className="w-full h-screen bg-gradient-to-r from-[#7cc3e6] to-[#abf6f6] flex sm:justify-center sm:items-center px-3 py-5">
+        <div className="w-[400px] bg-white rounded-xl p-8 h-fit">
           <div className="flex flex-col items-center">
             <div className="mb-10">
               <h1 className="font-bold text-2xl text-[#1F355E] mb-1 text-center">
@@ -25,18 +44,20 @@ const LoginPage = () => {
 
             <div className="mb-10">
               <input
-                type="email"
+                ref={usernameRef}
+                type="username"
                 className="cursor-pointer rounded-lg w-full px-5 py-4 bg-[#dbeff9] text-base text-[#1F355E] mb-4"
-                placeholder="Enter email"
+                placeholder="Enter username"
               />
               <input
+                ref={passwordRef}
                 type="password"
                 className="cursor-pointer rounded-lg w-full px-5 py-4 bg-[#dbeff9] text-base text-[#1F355E]"
                 placeholder="Enter password"
               />
             </div>
 
-            <div className="mb-14">
+            <div className="mb-14" onClick={handleLoginSubmit}>
               <button className="cursor-pointer rounded-lg bg-[#9cd8f0] text-[#1F355E] px-8 py-2">
                 {AUTHORIZATION_PAGES_LINKS.LOGIN.name}
               </button>
@@ -55,6 +76,13 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
+
+      <NotificationModal
+        isActive={showNotificationModal}
+        setShowNotificationModal={setShowNotificationModal}
+        message="Missing some fields in form"
+        type={NOTIFICATION_TYPES.ERROR}
+      />
     </AppLayout>
   );
 };

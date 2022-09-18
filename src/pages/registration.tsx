@@ -12,8 +12,8 @@ const RegistrationPage = () => {
       className="w-full"
       includeNavbar={false}
     >
-      <div className="w-full h-screen bg-gradient-to-r from-[#7cc3e6] to-[#abf6f6] flex justify-center items-center p-3">
-        <div className="w-[400px] bg-white rounded-xl p-8">
+      <div className="w-full h-screen bg-gradient-to-r from-[#7cc3e6] to-[#abf6f6] flex sm:justify-center sm:items-center px-3 py-5">
+        <div className="w-[400px] bg-white rounded-xl p-8 h-fit">
           <div className="flex flex-col items-center">
             <div className="mb-10">
               <h1 className="font-bold text-2xl text-[#1F355E] mb-2 text-center">
@@ -25,16 +25,26 @@ const RegistrationPage = () => {
               </h3>
             </div>
 
-            <div className="mb-10">
+            <div className="mb-10 flex w-full flex-col space-y-4">
               <input
                 type="email"
-                className="cursor-pointer rounded-lg w-full px-5 py-4 bg-[#dbeff9] text-base text-[#1F355E] mb-4"
+                className="cursor-pointer rounded-lg w-full px-5 py-4 bg-[#dbeff9] text-base text-[#1F355E]"
                 placeholder="Enter email"
+              />
+              <input
+                type="email"
+                className="cursor-pointer rounded-lg w-full px-5 py-4 bg-[#dbeff9] text-base text-[#1F355E]"
+                placeholder="Enter username"
               />
               <input
                 type="password"
                 className="cursor-pointer rounded-lg w-full px-5 py-4 bg-[#dbeff9] text-base text-[#1F355E]"
                 placeholder="Enter password"
+              />
+              <input
+                type="password"
+                className="cursor-pointer rounded-lg w-full px-5 py-4 bg-[#dbeff9] text-base text-[#1F355E]"
+                placeholder="Confirm password"
               />
             </div>
 
