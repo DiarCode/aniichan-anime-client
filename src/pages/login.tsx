@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import React, { MutableRefObject, useRef, useState } from "react";
 import AppLayout from "../components/AppLayouts/AppLayout";
@@ -11,14 +10,22 @@ const LoginPage = () => {
   const passwordRef = useRef() as MutableRefObject<HTMLInputElement>;
 
   const [showNotificationModal, setShowNotificationModal] = useState(false);
+  const [notificatioMessage, setNotificatioMessage] = useState<string | null>(
+    null
+  );
 
   const handleLoginSubmit = () => {
     const usernameValue = usernameRef.current.value || null;
     const passwordValue = passwordRef.current.value || null;
 
-    const isFormInputValid = usernameValue !== null && passwordValue !== null;
+    const formFieldsValues = [usernameValue, passwordValue];
 
-    if (!isFormInputValid) return setShowNotificationModal(true);
+    const isFormInputValid = formFieldsValues.every(value => value !== null);
+
+    if (!isFormInputValid) {
+      setNotificatioMessage("All fields must be filled");
+      return setShowNotificationModal(true);
+    }
 
     console.log("username: ", usernameValue);
     console.log("password: ", passwordValue);
@@ -80,7 +87,7 @@ const LoginPage = () => {
       <NotificationModal
         isActive={showNotificationModal}
         setShowNotificationModal={setShowNotificationModal}
-        message="Missing some fields in form"
+        message={notificatioMessage}
         type={NOTIFICATION_TYPES.ERROR}
       />
     </AppLayout>

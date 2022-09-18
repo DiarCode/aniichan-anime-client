@@ -5,7 +5,7 @@ interface NotificationModalProps {
   isActive: boolean;
   setShowNotificationModal: (state: boolean) => void;
   type: NOTIFICATION_TYPES;
-  message: string;
+  message: string | null;
 }
 
 const ERROR_MODAL_STYLE = "bg-[#ECC5BB] border-2 border border-[#ECC5BB]";
