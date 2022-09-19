@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import { getYearFromDate } from "../../helpers/getYearFromDate";
+import { getYearFromDate } from "../../helpers/formatDate/getYearFromDate";
 import { IManga } from "../../types/manga";
 
 interface MangaListExcerptProps {

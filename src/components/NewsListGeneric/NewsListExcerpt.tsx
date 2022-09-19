@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { getDaysDifference } from "../../helpers/getDaysDifference";
+import { getDaysDifference } from "../../helpers/formatDate/getDaysDifference";
 import { INews } from "../../types/news";
 
 interface NewsListExcerptProps {

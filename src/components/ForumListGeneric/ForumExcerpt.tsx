@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { getFormattedDate } from "../../helpers/getFormattedDate";
+import { getFormattedDate } from "../../helpers/formatDate/getFormattedDate";
 import { IForum } from "../../types/forum";
 
 interface ForumExcerptProps {
