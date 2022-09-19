@@ -1,6 +1,6 @@
 import React from "react";
 import { IManga } from "../../types/manga";
-import AnimeExcerptSkeleton from "../Skeletons/RecomendationsExcerptSkeleton";
+import AnimeAndMangaExcerptSkeleton from "../Skeletons/AnimeAndMangaExcerptSkeleton";
 import MangaListExcerpt from "./MangaListExcerpt";
 
 interface MangaListProps {
@@ -12,7 +12,7 @@ interface MangaListProps {
 const MangaList = ({ data, isLoading, isError }: MangaListProps) => {
   if (isLoading || isError) {
     const skeleton = [...new Array(10)].map((_, index) => (
-      <AnimeExcerptSkeleton key={index} />
+      <AnimeAndMangaExcerptSkeleton key={index} />
     ));
     return (
       <div className="flex items-center gap-5 overflow-x-auto">{skeleton}</div>

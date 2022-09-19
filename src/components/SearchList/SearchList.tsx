@@ -1,7 +1,7 @@
 import React from "react";
 import { IAnime } from "../../types/anime";
 import RecomendationsListExcerpt from "../AnimeListGeneric/AnimeListExcerpt";
-import RecomendationsExcerptSkeleton from "../Skeletons/RecomendationsExcerptSkeleton";
+import AnimeAndMangaExcerptSkeleton from "../Skeletons/AnimeAndMangaExcerptSkeleton";
 
 interface SearchListProps {
   data?: IAnime[];
@@ -12,7 +12,7 @@ interface SearchListProps {
 const SearchList = ({ data, isLoading, isError }: SearchListProps) => {
   if (isLoading || isError) {
     const skeleton = [...new Array(10)].map((_, index) => (
-      <RecomendationsExcerptSkeleton key={index} />
+      <AnimeAndMangaExcerptSkeleton key={index} />
     ));
     return <div className="flex flex-wrap items-center gap-5">{skeleton}</div>;
   }
