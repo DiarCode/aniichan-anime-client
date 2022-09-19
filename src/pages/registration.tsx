@@ -9,7 +9,8 @@ const RegistrationPage = () => {
   const registrationPageTitle = "Get's started";
 
   const emailRef = useRef() as MutableRefObject<HTMLInputElement>;
-  const usernameRef = useRef() as MutableRefObject<HTMLInputElement>;
+  const firstNameRef = useRef() as MutableRefObject<HTMLInputElement>;
+  const lastNameRef = useRef() as MutableRefObject<HTMLInputElement>;
   const passwordRef = useRef() as MutableRefObject<HTMLInputElement>;
   const confirmPasswordRef = useRef() as MutableRefObject<HTMLInputElement>;
 
@@ -20,13 +21,15 @@ const RegistrationPage = () => {
 
   const handleRegistrationSubmit = () => {
     const emailValue = emailRef.current.value || null;
-    const usernameValue = usernameRef.current.value || null;
+    const firstNameValue = firstNameRef.current.value || null;
+    const lastNameValue = lastNameRef.current.value || null;
     const passwordValue = passwordRef.current.value || null;
     const confirmPasswordValue = confirmPasswordRef.current.value || null;
 
     const formFieldsValues = [
       emailValue,
-      usernameValue,
+      firstNameValue,
+      lastNameValue,
       passwordValue,
       confirmPasswordValue,
     ];
@@ -44,7 +47,8 @@ const RegistrationPage = () => {
     }
 
     console.log("email: ", emailValue);
-    console.log("username: ", usernameValue);
+    console.log("name: ", firstNameValue);
+    console.log("surname: ", lastNameValue);
     console.log("password: ", passwordValue);
     console.log("confirmpassword: ", confirmPasswordValue);
   };
@@ -76,10 +80,16 @@ const RegistrationPage = () => {
                 placeholder="Enter email"
               />
               <input
-                ref={usernameRef}
-                type="username"
+                ref={firstNameRef}
+                type="text"
                 className="cursor-pointer rounded-lg w-full px-5 py-4 bg-[#dbeff9] text-base text-[#1F355E]"
-                placeholder="Enter username"
+                placeholder="Enter first name"
+              />
+              <input
+                ref={lastNameRef}
+                type="text"
+                className="cursor-pointer rounded-lg w-full px-5 py-4 bg-[#dbeff9] text-base text-[#1F355E]"
+                placeholder="Enter last name"
               />
               <input
                 ref={passwordRef}
