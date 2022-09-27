@@ -37,3 +37,14 @@ export const PROFILE_PAGES_LINKS = {
   LIKED: { name: "Liked", element: "element", path: "/liked-anime" },
   SETTINGS: { name: "Settings", element: "element", path: "/settings" },
 };
+
+export const EXCERPT_PAGES_LINKS = {
+  ANIME: { name: "Anime", element: "element", path: "/anime" },
+};
+
+export const PAGES_LINKS = {
+  ...NAVBAR_PAGES_LINKS,
+  ...AUTHORIZATION_PAGES_LINKS,
+  ...PROFILE_PAGES_LINKS,
+  ...EXCERPT_PAGES_LINKS,
+};

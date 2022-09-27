@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { getYearFromDate } from "../../helpers/formatDate/getYearFromDate";
 import { IManga } from "../../types/manga";
+import { PAGES_LINKS } from "../../utils/pages";
 
 interface MangaListExcerptProps {
   data: IManga;
@@ -14,6 +15,8 @@ const MangaListExcerpt = ({ data }: MangaListExcerptProps) => {
   const [isDislikeHovered, setIsDislikeHovered] = useState(false);
 
   const formattedDate = getYearFromDate(data.published.from);
+
+  const excerptLink = `${PAGES_LINKS.MANGA.name}/${data.mal_id}`;
 
   const episodesString = `${data?.chapters || 0} chapters`;
   const details = [formattedDate, data?.type].join(", ");
@@ -110,7 +113,7 @@ const MangaListExcerpt = ({ data }: MangaListExcerptProps) => {
         </Link>
 
         <div className="py-3 pl-2">
-          <Link href={"/"}>
+          <Link href={excerptLink}>
             <p className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-sm sm:text-base text-[#1F355E] font-medium">
               {data?.title}
             </p>

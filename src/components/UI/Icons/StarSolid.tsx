@@ -2,7 +2,7 @@ import React from "react";
 
 export interface IIconProps {
   className?: string;
-  fill?: string;
+  fill: string;
 }
 
 const StarSolid = ({ className, fill }: IIconProps) => {

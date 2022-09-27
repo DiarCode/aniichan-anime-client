@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import AppLayout from "../../components/AppLayouts/AppLayout";
 import ExcerptGenresList from "../../components/ExcerptGenresList/ExcerptGenresList";
-import StarSolid from "../../components/UI/StarSolid";
+import StarSolid from "../../components/UI/Icons/StarSolid";
 import { genreEntityArr } from "../../utils/test";
 
 const AnimeExcerpt = () => {
@@ -21,6 +21,7 @@ const AnimeExcerpt = () => {
   return (
     <AppLayout title="Anime title">
       <div className="grid grid-cols-4 w-full mx-auto py-7 sm:py-11 text-[#1F355E] gap-x-3 gap-y-6">
+        {/* {Image} */}
         <div className="col-span-4 sm:col-span-1 flex justify-center w-full">
           <div className="max-w-[220px] max-h-[320px]">
             <Image
@@ -32,6 +33,8 @@ const AnimeExcerpt = () => {
             />
           </div>
         </div>
+
+        {/* {Main} */}
         <div className="col-span-4 sm:col-span-3 lg:col-span-2 sm:ml-5 lg:ml-0">
           <div className="flex flex-col space-y-6">
             <div className="flex item-center justify-between">
@@ -61,8 +64,10 @@ const AnimeExcerpt = () => {
             </div>
           </div>
         </div>
+
+        {/* {Side Section} */}
         <div className="col-span-4 lg:col-span-1 flex justify-center">
-          <div className="flex lg:flex-col items-start justify-center flex-wrap lg:justify-start gap-x-10 gap-y-3 w-full lg:w-[80%] h-fit bg-[#F2F2F2] rounded-xl p-6">
+          <div className="flex lg:flex-col items-start justify-center flex-wrap lg:justify-start gap-x-10 gap-y-3 w-full lg:w-[80%] h-fit bg-[#F2F2F2] rounded-xl p-3 lg:p-6 ">
             {renderedCharasterics}
           </div>
         </div>

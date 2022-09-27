@@ -1,18 +1,21 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { IAnime } from "../../types/anime";
+import { PAGES_LINKS } from "../../utils/pages";
 
 interface RecomendationsListExcerptProps {
   data: IAnime;
 }
 
-const RecomendationsListExcerpt = ({
+const AnimeListExcerpt = ({
   data,
 }: RecomendationsListExcerptProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isSaveHovered, setIsSaveHovered] = useState(false);
   const [isLikeHovered, setIsLikeHovered] = useState(false);
   const [isDislikeHovered, setIsDislikeHovered] = useState(false);
+
+  const excerptLink = `${PAGES_LINKS.ANIME.path}/${data.mal_id}`;
 
   const episodesString = `${data?.episodes || 0} episodes`;
   const details = [data?.year, data?.type].join(", ");
@@ -109,7 +112,7 @@ const RecomendationsListExcerpt = ({
         </Link>
 
         <div className="py-3 pl-2">
-          <Link href={"/"}>
+          <Link href={excerptLink}>
             <p className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-sm sm:text-base text-[#1F355E] font-medium">
               {data?.title}
             </p>
@@ -123,4 +126,4 @@ const RecomendationsListExcerpt = ({
   );
 };
 
-export default RecomendationsListExcerpt;
+export default AnimeListExcerpt;
