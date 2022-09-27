@@ -1,5 +1,6 @@
 import { IAnime } from "../types/anime";
 import { IEpisode } from "../types/episode";
+import { IGenre } from "../types/genre";
 import { IManga } from "../types/manga";
 import { INews } from "../types/news";
 
@@ -212,4 +213,21 @@ export const mangaEntityArr = [
   mangaEntity,
   mangaEntity,
   mangaEntity,
+];
+
+const genreEntity: IGenre = {
+  mal_id: 1,
+  type: "genre",
+  name: "Drama",
+  url: "/",
+};
+
+export const genreEntityArr = [
+  genreEntity,
+  genreEntity,
+  genreEntity,
+  genreEntity,
+  genreEntity,
+  genreEntity,
+  genreEntity,
 ];
