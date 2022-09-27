@@ -16,7 +16,7 @@ const MangaListExcerpt = ({ data }: MangaListExcerptProps) => {
 
   const formattedDate = getYearFromDate(data.published.from);
 
-  const excerptLink = `${PAGES_LINKS.MANGA.name}/${data.mal_id}`;
+  const excerptLink = `${PAGES_LINKS.MANGA.path}/${data.mal_id}`;
 
   const episodesString = `${data?.chapters || 0} chapters`;
   const details = [formattedDate, data?.type].join(", ");

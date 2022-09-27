@@ -3,13 +3,11 @@ import React, { useState } from "react";
 import { IAnime } from "../../types/anime";
 import { PAGES_LINKS } from "../../utils/pages";
 
-interface RecomendationsListExcerptProps {
+interface AnimeListExcerptProps {
   data: IAnime;
 }
 
-const AnimeListExcerpt = ({
-  data,
-}: RecomendationsListExcerptProps) => {
+const AnimeListExcerpt = ({ data }: AnimeListExcerptProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isSaveHovered, setIsSaveHovered] = useState(false);
   const [isLikeHovered, setIsLikeHovered] = useState(false);
