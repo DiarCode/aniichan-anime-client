@@ -25,8 +25,9 @@ const Navbar = () => {
       return (
         <Link href={page.path} key={page.name}>
           <p
+            title={page.name}
             className={`font-medium text-lg cursor-pointer ${currentPageStyle} ${
-              !isPageSelected && "hover:text-[#7a99a7]"
+              !isPageSelected && "hover:text-[#80adc2]"
             } duration-200 transition-all`}
           >
             {page.name}

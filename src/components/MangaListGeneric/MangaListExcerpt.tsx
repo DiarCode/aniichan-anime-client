@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { getYearFromDate } from "../../helpers/formatDate/getYearFromDate";
 import { IManga } from "../../types/manga";
 import { PAGES_LINKS } from "../../utils/pages";
+import StarSolid from "../UI/Icons/StarSolid";
 
 interface MangaListExcerptProps {
   data: IManga;
@@ -23,7 +24,7 @@ const MangaListExcerpt = ({ data }: MangaListExcerptProps) => {
 
   const hoveredDetailsContent = isHovered && (
     <div
-      className="hidden sm:block rounded-xl absolute top-0 right-0 bottom-0 left-0 p-4 cursor-pointer bg-opacity-70 bg-black "
+      className="hidden sm:block rounded-xl absolute top-0 right-0 bottom-0 left-0 p-4 cursor-pointer bg-opacity-70 bg-black"
       onClick={e => e.preventDefault()}
     >
       <div className="rounded-xl flex flex-col justify-between h-full">
@@ -78,9 +79,12 @@ const MangaListExcerpt = ({ data }: MangaListExcerptProps) => {
         </div>
 
         <div className="flex flex-col">
-          <p className="text-white text-lg sm:text-2xl font-bold">
-            {data?.score}
-          </p>
+          <div className="flex items-center gap-1">
+            <p className="text-white text-lg sm:text-2xl font-bold">
+              {data?.score}
+            </p>
+            <StarSolid fill={"#6FBEDC"} className="w-6 h-6" />
+          </div>
           <p className="text-[#d9d7e0] text-xs sm:text-sm font-normal truncate text-ellipsis overflow-x-hidden">
             {details}
           </p>
@@ -95,7 +99,7 @@ const MangaListExcerpt = ({ data }: MangaListExcerptProps) => {
   return (
     <div className="w-[120px] sm:w-[177px] sm:pl-2 pt-2 flex">
       <div className="w-[120px] sm:w-[177px]">
-        <Link href={"https://moodle.astanait.edu.kz"}>
+        <Link href={excerptLink}>
           <div
             className="relative cursor-pointer h-[183px] sm:h-[240px] bg-black rounded-xl sm:hover:scale-105 duration-200"
             onMouseOver={() => setIsHovered(true)}

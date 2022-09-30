@@ -1,9 +1,9 @@
 import React from "react";
-import AppLayout from "../components/AppLayouts/AppLayout";
-import MangaListGeneric from "../components/MangaListGeneric/MangaListGeneric";
-import NewsListGeneric from "../components/NewsListGeneric/NewsListGeneric";
-import { NAVBAR_PAGES_LINKS } from "../utils/pages";
-import { mangaEntityArr, newsEntityArr } from "../utils/test";
+import AppLayout from "../../components/AppLayouts/AppLayout";
+import MangaListGeneric from "../../components/MangaListGeneric/MangaListGeneric";
+import NewsListGeneric from "../../components/NewsListGeneric/NewsListGeneric";
+import { NAVBAR_PAGES_LINKS } from "../../utils/pages";
+import { mangaEntityArr, newsEntityArr } from "../../utils/test";
 
 const MangaPage = () => {
   return (

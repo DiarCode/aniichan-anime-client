@@ -24,6 +24,7 @@ const ProfileNavbar = ({ isActive, handleBtn }: ProfileNavbarProps) => {
       return (
         <Link href={page.path} key={page.name}>
           <p
+            title={page.name}
             className={`font-medium text-lg cursor-pointer text-[#1F355E] hover:text-[#7a99a7] duration-200 transition-all`}
           >
             {page.name}
@@ -56,7 +57,10 @@ const ProfileNavbar = ({ isActive, handleBtn }: ProfileNavbarProps) => {
       >
         <div className="flex flex-col justify-center items-start w-full px-6 py-5">
           <div className="w-full">
-            <h1 className="font-semibold truncate text-ellipsis overflow-x-hidden pb-2 border-b-[0.1px] border-[#8594b1] text-lg text-[#1F355E]">
+            <h1
+              title={user?.name}
+              className="font-semibold truncate text-ellipsis overflow-x-hidden pb-2 border-b-[0.1px] border-[#8594b1] text-lg text-[#1F355E]"
+            >
               {user?.name}
             </h1>
           </div>
@@ -65,6 +69,7 @@ const ProfileNavbar = ({ isActive, handleBtn }: ProfileNavbarProps) => {
           </div>
           <div className="w-full pt-2 border-t-[0.1px] border-[#8594b1]">
             <button
+              title="Logout"
               onClick={handleLogout}
               className="text-[#1F355E] text-base font-medium rounded-xl hover:text-[#7a99a7]"
             >

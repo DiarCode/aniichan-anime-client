@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { IAnime } from "../../types/anime";
 import { PAGES_LINKS } from "../../utils/pages";
+import StarSolid from "../UI/Icons/StarSolid";
 
 interface AnimeListExcerptProps {
   data: IAnime;
@@ -75,9 +76,12 @@ const AnimeListExcerpt = ({ data }: AnimeListExcerptProps) => {
         </div>
 
         <div className="flex flex-col">
-          <p className="text-white text-lg sm:text-2xl font-bold">
-            {data?.score}
-          </p>
+          <div className="flex items-center gap-1">
+            <p className="text-white text-lg sm:text-2xl font-bold">
+              {data?.score}
+            </p>
+            <StarSolid fill={"#6FBEDC"} className="w-6 h-6" />
+          </div>
           <p className="text-[#d9d7e0] text-xs sm:text-sm font-normal truncate text-ellipsis overflow-x-hidden">
             {details}
           </p>
@@ -92,9 +96,9 @@ const AnimeListExcerpt = ({ data }: AnimeListExcerptProps) => {
   return (
     <div className="w-[120px] sm:w-[177px] sm:pl-2 pt-2 flex">
       <div className="w-[120px] sm:w-[177px]">
-        <Link href={"https://moodle.astanait.edu.kz"}>
+        <Link href={excerptLink}>
           <div
-            className="relative cursor-pointer h-[183px] sm:h-[240px] bg-black rounded-xl sm:hover:scale-105 duration-200"
+            className="relative cursor-pointer h-[183px] sm:h-[240px] bg-black rounded-xl sm:hover:scale-105 duration-500"
             onMouseOver={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -111,7 +115,11 @@ const AnimeListExcerpt = ({ data }: AnimeListExcerptProps) => {
 
         <div className="py-3 pl-2">
           <Link href={excerptLink}>
-            <p className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-sm sm:text-base text-[#1F355E] font-medium">
+            <p
+              onMouseOver={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="cursor-pointer truncate text-ellipsis overflow-x-hidden text-sm sm:text-base text-[#1F355E] font-medium"
+            >
               {data?.title}
             </p>
           </Link>
